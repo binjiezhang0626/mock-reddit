@@ -1,10 +1,7 @@
 name: CI
 
 on:
-  push:
-    branches:    
-      - '*'         # matches every branch
-      - '!master'   # excludes master
+  [push]
 
 jobs:
   build:
