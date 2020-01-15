@@ -1,18 +1,21 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const mongndbQueryWithPromise = require('./mongodb.js');
 
 const port = process.env.PORT;
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
-
 app.get('/api/posts', async (req, res) => {
-  const posts = await mongndbQueryWithPromise('find', {});
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'application/json');
-  res.send(posts);
+  try {
+    const posts = await mongndbQueryWithPromise('find', {});
+    res.status(200).json(posts);
+  } catch (error) {
+    res.status(500).json({ error });
+  }
 });
 
 app.post('/api/posts', async (req, res) => {
@@ -20,12 +23,9 @@ app.post('/api/posts', async (req, res) => {
     const timestamp = new Date().getTime();
     const post = { ...req.body, timestamp };
     await mongndbQueryWithPromise('insertOne', post);
-    res.statusCode = 201;
-    res.setHeader('Content-Type', 'application/json');
-    res.end('Post success!');
+    res.status(201).json('Post success!');
   } else {
-    res.statusCode = 400;
-    res.end();
+    res.status(400).end();
   }
 });
 
