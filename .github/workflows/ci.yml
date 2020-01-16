@@ -23,7 +23,7 @@ jobs:
         npm i yarn -g
         yarn install
         yarn lint
-        # yarn test
+        yarn test
         yarn build
       env:
         CI: true
