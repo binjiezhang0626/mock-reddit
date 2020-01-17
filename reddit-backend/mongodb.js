@@ -1,8 +1,9 @@
-require('dotenv').config();
+// require('dotenv').config();
 const { MongoClient } = require('mongodb');
+const { MONGODBUSERNAME, MONGODBPASSWORD } = require('./config');
 
-const username = process.env.MONGODBUSERNAME;
-const password = process.env.MONGODBPASSWORD;
+const username = MONGODBUSERNAME;
+const password = MONGODBPASSWORD;
 const uri = `mongodb+srv://${username}:${password}@cluster0-rlq64.azure.mongodb.net/test?retryWrites=true&w=majority`;
 
 
