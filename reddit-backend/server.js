@@ -8,6 +8,7 @@ const port = process.env.PORT;
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.static('./dist/frontend/build'));
 
 app.get('/api/posts', async (req, res) => {
   try {
