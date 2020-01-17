@@ -11,7 +11,7 @@
 }
 .vote{ 
   margin-left: 1em;
-  width: 1.5em;
+  width: 5%;
   height: 8em;
   display: flex;
   flex-direction: column;
@@ -19,7 +19,7 @@
   
 }
 .content{
-  width: 90%;
+  width: 95%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -30,7 +30,7 @@
 }
 .upvote {
   margin-top:1em;
-  background-image: url('../../assets/upvote.png');
+  background-image: url('../../../assets/upvote.png');
   background-size: contain;
   width: 1.5em;
   height: 1.5em;
@@ -44,7 +44,7 @@
 }
 
 .downvote {
-  background-image: url('../../assets/downvote.png');
+  background-image: url('../../../assets/downvote.png');
   background-size: contain;
   width: 1.5em;
   height: 1.5em;

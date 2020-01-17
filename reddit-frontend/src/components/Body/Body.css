@@ -14,5 +14,11 @@
   background-color: aquamarine;
   align-items: center;
   justify-content: center;
-  
+}
+.RightSide{
+  display: flex;
+  width: 30%;
+  margin-left: 20pt;
+  background-color: cadetblue;
+  height: 95%;
 }

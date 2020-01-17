@@ -6,6 +6,9 @@ const Body = () => (
   <div className="Body">
     <div className="Frame">
       <Posts />
+      <div className="RightSide">
+        SUBMIT A NEW POST
+      </div>
     </div>
   </div>
 );
