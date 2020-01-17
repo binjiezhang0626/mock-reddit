@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addPostAction } from '../../actions';
+import './NewPost.css';
 
 const NewPost = ({ history, addPost }) => {
   const [title, setTitle] = useState('');

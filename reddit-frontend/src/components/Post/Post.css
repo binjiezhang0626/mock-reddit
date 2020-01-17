@@ -7,7 +7,7 @@
   max-height: 10em;
   border-radius: 0.3em;
   margin-bottom: 20px;
-  background-color: whitesmoke;
+  background-color: azure;
 }
 .vote{ 
   margin-left: 1em;
@@ -25,8 +25,6 @@
   justify-content: space-between;
   margin-left: 1em;
   box-sizing: border-box;
-  /* width:500px;
-  height:6em; */
 }
 .upvote {
   margin-top:1em;

@@ -11,7 +11,6 @@
   flex-direction: row;
   width: 70%;
   height: 95%;
-  background-color: aquamarine;
   align-items: center;
   justify-content: center;
 }
@@ -20,6 +19,6 @@
   flex-direction: column;
   width: 30%;
   margin-left: 20pt;
-  background-color: cadetblue;
+
   height: 95%;
 }
