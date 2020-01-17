@@ -22,7 +22,7 @@ jobs:
       run: |
         npm i yarn -g
         yarn install
-        # yarn lint
+        yarn lint
         # yarn test
         yarn build
       env:

@@ -1,9 +1,7 @@
-require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const { PORT: port } = require('./config');
 const mongndbQueryWithPromise = require('./mongodb.js');
-
-const port = process.env.PORT;
 
 const app = express();
 app.use(cors());

@@ -1,16 +1,14 @@
 import React from 'react';
 import './Body.css';
 import Posts from '../Posts/Posts';
+import RightSide from '../RightSide/RightSide';
 
-const Body = () => (
+const Body = (props) => (
   <div className="Body">
     <div className="Frame">
       <Posts />
-      <div className="RightSide">
-        SUBMIT A NEW POST
-      </div>
+      <RightSide history={props.history} />
     </div>
   </div>
 );
-
 export default Body;

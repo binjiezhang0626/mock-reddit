@@ -17,6 +17,7 @@
 }
 .RightSide{
   display: flex;
+  flex-direction: column;
   width: 30%;
   margin-left: 20pt;
   background-color: cadetblue;
