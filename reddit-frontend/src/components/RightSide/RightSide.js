@@ -10,7 +10,7 @@ const RightSide = ({ history }) => {
   return (
     <div className="RightSide">
       <button
-        className="submitButton"
+        className="addnewButton"
         type="submit"
         onClick={handleClick}
       >

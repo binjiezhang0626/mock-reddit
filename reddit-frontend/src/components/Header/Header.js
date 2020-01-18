@@ -7,7 +7,7 @@ const Header = () => (
       <div>Tech Stack</div>
       <div className="userInfo">
         <div className="avatar" />
-        <span>User</span>
+        <span>Binjie</span>
       </div>
     </div>
   </div>

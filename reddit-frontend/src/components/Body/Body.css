@@ -2,8 +2,6 @@
   display: flex;
   height: 95%;
   width: 100%;
-  /* background-color: aliceblue; */
-  background-color: cadetblue;
   align-items: center;
   justify-content: center;
 }
@@ -14,7 +12,6 @@
   height: 93%;
   align-items: center;
   justify-content: space-between;
-  background-color: palegoldenrod;
 }
 .RightSide{
   display: flex;
@@ -23,5 +20,4 @@
   width: 40%;
   margin-left: 20pt;
   height: 100%;
-  /* background-color: paleturquoise; */
 }

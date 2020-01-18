@@ -6,22 +6,40 @@
   align-items: center;
   justify-content: center;
 }
-.subFrame{
-  /* background-color: turquoise; */
-  width: 60%;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
 .form{
   background-color: azure;
-  height:60%;
+  height: 50%;
   width:60%;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
+}
+input{
+  width: 170px;
+  height: 20px;
+  font-size: large;
+  padding: 2px 5px;
+}
+select{
+  font-size: .9rem;
+  padding: 2px 5px;
+}
+label{
+  font-weight: bold;
+}
+textarea{
+  width: 170px;
+  height: 50px;
+  padding: 2px 5px;
+}
+.submitButton{
+  width: 100px;
+  height: 8%;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 2px 5px;
+  font-family: 'Courier New', Courier, monospace;
 }

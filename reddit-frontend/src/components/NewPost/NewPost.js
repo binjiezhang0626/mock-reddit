@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -10,6 +11,7 @@ const initInput = {
   level: '',
   description: '',
 };
+
 const NewPost = ({ history, addPost }) => {
   const [input, setInput] = useState(initInput);
 
@@ -29,45 +31,49 @@ const NewPost = ({ history, addPost }) => {
   return (
     <div className="Frame">
       <form className="form" onSubmit={handleSubmit}>
-        <div className="subFrame">
-          <h5>Skill</h5>
-          <input
-            type="text"
-            name="skill"
-            placeholder="skill"
-            onChange={handleChange}
-            value={input.skill}
-          />
-          <h5>Type</h5>
-          <select
-            name="type"
-            value={input.type}
-            onChange={handleChange}
-          >
-            <option value="frontend">Frontend</option>
-            <option value="backend">Backend</option>
-            <option value="other">Other</option>
-          </select>
-          <h5>Level</h5>
-          <select
-            name="level"
-            value={input.level}
-            onChange={handleChange}
-          >
-            <option value="novice">Novice</option>
-            <option value="intermediate">Intermediate</option>
-            <option value="advanced">Advanced</option>
-          </select>
-          <h5>Description</h5>
-          <textarea
-            type="text"
-            name="description"
-            placeholder="description"
-            onChange={handleChange}
-            value={input.description}
-          />
-          <button className="submit" type="submit">SUBMIT</button>
-        </div>
+        <label htmlFor="skill">Skill</label>
+        <input
+          type="text"
+          name="skill"
+          id="skill"
+          placeholder="skill"
+          onChange={handleChange}
+          value={input.skill}
+        />
+        <label htmlFor="type">Type</label>
+        <select
+          name="type"
+          id="type"
+          value={input.type}
+          onChange={handleChange}
+        >
+          <option value="">--Please choose a type--</option>
+          <option value="frontend">Frontend</option>
+          <option value="backend">Backend</option>
+          <option value="other">Other</option>
+        </select>
+        <label htmlFor="level">Level</label>
+        <select
+          name="level"
+          id="level"
+          value={input.level}
+          onChange={handleChange}
+        >
+          <option value="">--Please choose a level--</option>
+          <option value="novice">Novice</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+        <label htmlFor="description">Description</label>
+        <textarea
+          type="text"
+          name="description"
+          id="description"
+          placeholder="Write some description..."
+          onChange={handleChange}
+          value={input.description}
+        />
+        <button className="submitButton" type="submit">SUBMIT</button>
       </form>
     </div>
   );
