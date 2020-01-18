@@ -28,10 +28,18 @@ const Post = ({ post, vote, getPost }) => {
       </div>
 
       <div className="content">
-        <span>{post.skill}</span>
-        <span>{post.type}</span>
-        <span>{post.level}</span>
-        <span>{post.description}</span>
+        <h3 className="skill">{post.skill}</h3>
+        <span className="type">
+          Type:
+          {' '}
+          {post.type}
+        </span>
+        <span className="level">
+          Level:
+          {' '}
+          {post.level}
+        </span>
+        <p className="description">{post.description}</p>
       </div>
     </div>
   );

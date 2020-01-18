@@ -4,7 +4,7 @@ import './Header.css';
 const Header = () => (
   <div className="Header">
     <div className="subHeader">
-      <div>Tech Stack</div>
+      <h2>Tech Stack</h2>
       <div className="userInfo">
         <div className="avatar" />
         <span>Binjie</span>
