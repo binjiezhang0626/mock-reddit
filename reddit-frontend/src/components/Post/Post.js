@@ -5,24 +5,25 @@ import React from 'react';
 import './Post.css';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { voteAction } from '../../actions';
+import { voteAction, getPostsAction } from '../../actions';
 
-const Post = ({ post, vote }) => {
-  const upvote = () => {
-    vote(post._id, post.score, 'upvote');
+const Post = ({ post, vote, getPost }) => {
+  const upAndDownVote = {
+    upvote: () => vote(post.skill, 'upvote'),
+    downvote: () => vote(post.skill, 'downvote'),
+  };
+  const handleVote = (e) => {
+    upAndDownVote[e.target.className]().then(() => getPost());
   };
 
-  const downvote = () => {
-    vote(post._id, post.score, 'downvote');
-  };
   return (
     <div className="post">
 
       <div className="vote">
-        <div className="subVote">
-          <div className="upvote" onClick={upvote} />
+        <div className="subVote" onClick={handleVote}>
+          <div className="upvote" />
           <span>{post.score}</span>
-          <div className="downvote" onClick={downvote} />
+          <div className="downvote" />
         </div>
       </div>
 
@@ -37,7 +38,8 @@ const Post = ({ post, vote }) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  vote: (id, score, vote) => dispatch(voteAction(id, score, vote)),
+  vote: (skill, vote) => dispatch(voteAction(skill, vote)),
+  getPost: () => dispatch(getPostsAction()),
 });
 
 Post.propTypes = {
@@ -50,6 +52,7 @@ Post.propTypes = {
     score: PropTypes.number,
   }).isRequired,
   vote: PropTypes.func.isRequired,
+  getPost: PropTypes.func.isRequired,
 };
 
 

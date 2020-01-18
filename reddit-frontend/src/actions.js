@@ -22,19 +22,14 @@ const addPostAction = (object) => async () => {
     body: JSON.stringify(object),
   });
 };
-const voteAction = (id, score, vote) => async (dispatch) => {
-  const result = await fetch(
-    `${URL}/${id}/${score}/${vote}`,
+const voteAction = (skill, vote) => async () => {
+  await fetch(
+    `${URL}/${skill}/${vote}`,
     {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
     },
   );
-  const post = await result.json();
-  dispatch({
-    type: VOTE,
-    post,
-  });
 };
 
 export {

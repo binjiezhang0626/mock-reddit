@@ -8,7 +8,7 @@ const mongndbQueryWithPromise = (queryMethod, queryInput) => new Promise(
     const client = new MongoClient(uri, { useUnifiedTopology: true });
     client.connect(async (error, connection) => {
       if (error) reject(error);
-      let result = connection.db('reddit').collection('posts')[queryMethod](queryInput);
+      let result = connection.db('reddit').collection('posts')[queryMethod](...queryInput);
       if (queryMethod === 'find') {
         result = await result.toArray();
       }
