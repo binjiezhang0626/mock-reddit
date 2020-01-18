@@ -1,6 +1,27 @@
+.Frame{
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 93%;
+  align-items: center;
+  justify-content: center;
+}
+.subFrame{
+  /* background-color: turquoise; */
+  width: 60%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
 .form{
-  margin-top:50px;
   background-color: azure;
-  height:600px;
-  width:600px;
+  height:60%;
+  width:60%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }

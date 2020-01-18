@@ -17,23 +17,20 @@ const Post = ({ post, vote }) => {
   };
   return (
     <div className="post">
+
       <div className="vote">
-        <div className="upvote" onClick={upvote} />
-        <span>{post.score}</span>
-        <div className="downvote" onClick={downvote} />
+        <div className="subVote">
+          <div className="upvote" onClick={upvote} />
+          <span>{post.score}</span>
+          <div className="downvote" onClick={downvote} />
+        </div>
       </div>
+
       <div className="content">
-        <span>{post.title}</span>
-        <br />
-        <span>{post.url}</span>
-        <br />
-        <span>
-          post at:
-          {' '}
-          {post.timestamp}
-        </span>
-        <br />
-        <div>Comment</div>
+        <span>{post.skill}</span>
+        <span>{post.type}</span>
+        <span>{post.level}</span>
+        <span>{post.description}</span>
       </div>
     </div>
   );
@@ -46,9 +43,10 @@ const mapDispatchToProps = (dispatch) => ({
 Post.propTypes = {
   post: PropTypes.shape({
     _id: PropTypes.string,
-    title: PropTypes.string,
-    url: PropTypes.string,
-    timestamp: PropTypes.number,
+    skill: PropTypes.string,
+    type: PropTypes.string,
+    level: PropTypes.string,
+    description: PropTypes.string,
     score: PropTypes.number,
   }).isRequired,
   vote: PropTypes.func.isRequired,

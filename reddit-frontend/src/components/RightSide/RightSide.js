@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import './RightSide.css';
 
 const RightSide = ({ history }) => {
   const handleClick = (event) => {
@@ -7,8 +9,22 @@ const RightSide = ({ history }) => {
   };
   return (
     <div className="RightSide">
-      <button onClick={handleClick}>SUBMIT A NEW POST</button>
+      <button
+        className="submitButton"
+        type="submit"
+        onClick={handleClick}
+      >
+        ADD NEW SKILL
+      </button>
+      <div className="note" />
     </div>
   );
 };
+
+RightSide.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }).isRequired,
+};
+
 export default RightSide;

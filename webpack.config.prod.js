@@ -23,6 +23,6 @@ module.exports = merge(common, {
   ],
   output: {
     filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, 'dist/frontend/build'),
+    path: path.resolve(__dirname, 'dist/frontend'),
   },
 });

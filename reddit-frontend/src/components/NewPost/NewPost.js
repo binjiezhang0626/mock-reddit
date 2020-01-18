@@ -4,42 +4,70 @@ import { connect } from 'react-redux';
 import { addPostAction } from '../../actions';
 import './NewPost.css';
 
+const initInput = {
+  skill: '',
+  type: '',
+  level: '',
+  description: '',
+};
 const NewPost = ({ history, addPost }) => {
-  const [title, setTitle] = useState('');
-  const [url, setUrl] = useState('');
+  const [input, setInput] = useState(initInput);
 
-  const handleChange = (event) => (event.target.id === 'title'
-    ? setTitle(event.target.value)
-    : setUrl(event.target.value));
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setInput({
+      ...input,
+      [name]: value,
+    });
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    addPost(title, url)
+    addPost(input)
       .then(() => history.push('/'));
   };
   return (
     <div className="Frame">
       <form className="form" onSubmit={handleSubmit}>
-        <h5>Title</h5>
-        <textarea
-          type="text"
-          name="title"
-          id="title"
-          placeholder="Title"
-          onChange={handleChange}
-          value={title}
-        />
-        <h5>Url</h5>
-        <input
-          type="text"
-          name="url"
-          id="url"
-          placeholder="URL"
-          onChange={handleChange}
-          value={url}
-        />
-        <br />
-        <button className="submit" type="submit">SUBMIT</button>
+        <div className="subFrame">
+          <h5>Skill</h5>
+          <input
+            type="text"
+            name="skill"
+            placeholder="skill"
+            onChange={handleChange}
+            value={input.skill}
+          />
+          <h5>Type</h5>
+          <select
+            name="type"
+            value={input.type}
+            onChange={handleChange}
+          >
+            <option value="frontend">Frontend</option>
+            <option value="backend">Backend</option>
+            <option value="other">Other</option>
+          </select>
+          <h5>Level</h5>
+          <select
+            name="level"
+            value={input.level}
+            onChange={handleChange}
+          >
+            <option value="novice">Novice</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+          </select>
+          <h5>Description</h5>
+          <textarea
+            type="text"
+            name="description"
+            placeholder="description"
+            onChange={handleChange}
+            value={input.description}
+          />
+          <button className="submit" type="submit">SUBMIT</button>
+        </div>
       </form>
     </div>
   );
@@ -48,7 +76,7 @@ const NewPost = ({ history, addPost }) => {
 const mapStateToProps = (state) => ({ postStatus: state.postStatus });
 
 const mapDispatchToProps = (dispatch) => ({
-  addPost: (title, url) => dispatch(addPostAction(title, url)),
+  addPost: (object) => dispatch(addPostAction(object)),
 });
 
 NewPost.propTypes = {

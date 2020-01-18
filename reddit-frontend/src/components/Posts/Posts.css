@@ -1,7 +1,9 @@
 .Posts{
   display: flex;
   flex-direction: column;
-  width: 60%;
-  height: 95%;
+  align-items: center;
+  width: 58%;
+  height: 100%;
   overflow: scroll;
+  background-color: palevioletred;
 }

@@ -3,8 +3,13 @@ import './Header.css';
 
 const Header = () => (
   <div className="Header">
-    <div>Mock reddit</div>
-    <div>User</div>
+    <div className="subHeader">
+      <div>Tech Stack</div>
+      <div className="userInfo">
+        <div className="avatar" />
+        <span>User</span>
+      </div>
+    </div>
   </div>
 );
 

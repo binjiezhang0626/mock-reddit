@@ -15,17 +15,12 @@ const getPostsAction = () => async (dispatch) => {
     posts,
   });
 };
-const addPostAction = (title, url) => async () => {
+const addPostAction = (object) => async () => {
   await fetch(URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ title, url }),
+    body: JSON.stringify(object),
   });
-  // const message = await result.json();
-  // dispatch({
-  //   type: FETCHED_ADDPOST,
-  //   message,
-  // });
 };
 const voteAction = (id, score, vote) => async (dispatch) => {
   const result = await fetch(

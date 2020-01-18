@@ -1,12 +1,13 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const { PORT: port } = require('./config');
 const mongndbQueryWithPromise = require('./mongodb.js');
 
+const port = process.env.PORT;
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use(express.static('./dist/frontend/build'));
+app.use(express.static('./dist/frontend'));
 
 app.get('/api/posts', async (req, res) => {
   try {
@@ -18,10 +19,9 @@ app.get('/api/posts', async (req, res) => {
 });
 
 app.post('/api/posts', async (req, res) => {
-  if (req.body.title) {
-    const timestamp = new Date().getTime();
+  if (req.body.skill) {
     const score = 0;
-    const post = { ...req.body, timestamp, score };
+    const post = { ...req.body, score };
     await mongndbQueryWithPromise('insertOne', post);
     res.status(201).json('Post success!');
   } else {
